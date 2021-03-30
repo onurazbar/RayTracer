@@ -19,10 +19,10 @@ Object::~Object()
 
 Vector3D Object::getColor()
 {
-	return color;
+    return color;
 }
 
 void Object::setColor(const Vector3D& color)
 {
-	this->color = color;
+    this->color = color;
 }

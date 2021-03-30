@@ -14,10 +14,10 @@ Ray::Ray(const Vector3D& origin, const Vector3D& direction) : origin(origin), di
 
 Vector3D Ray::getOrigin()
 {
-	return origin;
+    return origin;
 }
 
 Vector3D Ray::getDirection()
 {
-	return direction;
+    return direction;
 }

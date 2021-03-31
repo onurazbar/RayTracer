@@ -106,181 +106,181 @@ int main()
         cin >> selection;
 
         if (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(256,'\n');
+            cout << std::endl << "Invalid selection!" << endl << endl;
+            continue;
+        }
+        else if (selection == 1)
+        {
+            cout << "There are seven sample scenes enter a number from 1 to 7 to render corresponding scene" << endl;
+            cin >> selection;
+
+            if (cin.fail())
+            {
+                cin.clear();
+                cin.ignore(256,'\n');
+                cout << endl << "Invalid selection!" << endl << endl;
+                continue;
+            }
+            else if (selection == 1)
+            {
+                renderSampleScene1();
+            }
+            else if (selection == 2)
+            {
+                renderSampleScene2();
+            }
+            else if (selection == 3)
+            {
+                renderSampleScene3();
+            }
+            else if (selection == 4)
+            {
+                renderSampleScene4();
+            }
+            else if (selection == 5)
+            {
+                renderSampleScene5();
+            }
+            else if (selection == 6)
+            {
+                renderSampleScene6();
+            }
+            else if (selection == 7)
+            {
+                renderSampleScene7();
+            }
+            else
+            {
+                cout << endl << "Invalid selection!" << endl << endl;
+            }
+        }
+        else if (selection == 2)
+        {
+            int canvas_width = 0;
+            int canvas_height = 0;
+            RayTracer raytracer(1024, 768, Vector3D());
+
+            cout << "Make selections for below cases to create your own scene" << endl;
+            cout << "Enter canvas width as integer" << endl;
+            cin >> canvas_width;
+
+            cout << "Enter canvas height as integer" << endl;
+            cin >> canvas_height;
+
+            cout << "Do you want to add spheres? Enter 1 for YES / Enter 2 for NO" << endl;
+            cin >> selection;
+
+            if (selection == 1)
+            {
+                double red = 0.0;
+                double green = 0.0;
+                double blue = 0.0;
+                double x = 0.0;
+                double y = 0.0;
+                double z = 0.0;
+                double radius = 0.0;
+
+                cout << "How many spheres do you want to add? Enter sphere count" << endl;
+                cin >> selection;
+
+                for (int i = 0; i < selection; i++)
                 {
-                    cin.clear();
-                    cin.ignore(256,'\n');
-                    cout << std::endl << "Invalid selection!" << endl << endl;
-                    continue;
+                    cout << "Set parameters of sphere " << (i + 1) << endl;
+                    cout << "Enter RGB values one by one as doubles" << endl;
+                    cin >> red;
+                    cin >> green;
+                    cin >> blue;
+
+                    cout << "Enter x,y,z coordinate values one by one as doubles" << endl;
+                    cin >> x;
+                    cin >> y;
+                    cin >> z;
+
+                    cout << "Enter radius as double" << endl;
+                    cin >> radius;
+
+                    raytracer.addSphere(Vector3D(red, green, blue), Vector3D(x, y, z), radius);
                 }
-                else if (selection == 1)
+            }
+
+            cout << "Do you want to add light sources? Enter 1 for YES / Enter 2 for NO" << endl;
+            cin >> selection;
+
+            if (selection == 1)
+            {
+                double red = 0.0;
+                double green = 0.0;
+                double blue = 0.0;
+                double x = 0.0;
+                double y = 0.0;
+                double z = 0.0;
+
+                cout << "How many light sources do you want to add? Enter light source count" << endl;
+                cin >> selection;
+
+                for (int i = 0; i < selection; i++)
                 {
-                    cout << "There are seven sample scenes enter a number from 1 to 7 to render corresponding scene" << endl;
-                    cin >> selection;
+                    cout << "Set parameters of light source " << (i + 1) << endl;
+                    cout << "Enter RGB values one by one as doubles" << endl;
+                    cin >> red;
+                    cin >> green;
+                    cin >> blue;
 
-                    if (cin.fail())
-                    {
-                        cin.clear();
-                        cin.ignore(256,'\n');
-                        cout << endl << "Invalid selection!" << endl << endl;
-                        continue;
-                    }
-                    else if (selection == 1)
-                    {
-                        renderSampleScene1();
-                    }
-                    else if (selection == 2)
-                    {
-                        renderSampleScene2();
-                    }
-                    else if (selection == 3)
-                    {
-                        renderSampleScene3();
-                    }
-                    else if (selection == 4)
-                    {
-                        renderSampleScene4();
-                    }
-                    else if (selection == 5)
-                    {
-                        renderSampleScene5();
-                    }
-                    else if (selection == 6)
-                    {
-                        renderSampleScene6();
-                    }
-                    else if (selection == 7)
-                    {
-                        renderSampleScene7();
-                    }
-                    else
-                    {
-                        cout << endl << "Invalid selection!" << endl << endl;
-                    }
+                    cout << "Enter x,y,z coordinate values one by one as doubles" << endl;
+                    cin >> x;
+                    cin >> y;
+                    cin >> z;
+
+                    raytracer.addLightSource(Vector3D(red, green, blue), Vector3D(x, y, z));
                 }
-                else if (selection == 2)
+            }
+
+            cout << "Do you want to add planes? Enter 1 for YES / Enter 2 for NO" << endl;
+            cin >> selection;
+
+            if (selection == 1)
+            {
+                double red = 0.0;
+                double green = 0.0;
+                double blue = 0.0;
+                double x = 0.0;
+                double y = 0.0;
+                double z = 0.0;
+                double vx = 0.0;
+                double vy = 0.0;
+                double vz = 0.0;
+
+                cout << "How many planes do you want to add? Enter plane count" << endl;
+                cin >> selection;
+
+                for (int i = 0; i < selection; i++)
                 {
-                    int canvas_width = 0;
-                    int canvas_height = 0;
-                    RayTracer raytracer(1024, 768, Vector3D());
+                    cout << "Set parameters of plane " << (i + 1) << endl;
+                    cout << "Enter RGB values one by one as doubles" << endl;
+                    cin >> red;
+                    cin >> green;
+                    cin >> blue;
 
-                    cout << "Make selections for below cases to create your own scene" << endl;
-                    cout << "Enter canvas width as integer" << endl;
-                    cin >> canvas_width;
+                    cout << "Enter x,y,z coordinate values of plane point one by one as doubles" << endl;
+                    cin >> x;
+                    cin >> y;
+                    cin >> z;
 
-                    cout << "Enter canvas height as integer" << endl;
-                    cin >> canvas_height;
+                    cout << "Enter x,y,z coordinate values of plane normal one by one as doubles" << endl;
+                    cin >> vx;
+                    cin >> vy;
+                    cin >> vz;
 
-                    cout << "Do you want to add spheres? Enter 1 for YES / Enter 2 for NO" << endl;
-                    cin >> selection;
-
-                    if (selection == 1)
-                    {
-                        double red = 0.0;
-                        double green = 0.0;
-                        double blue = 0.0;
-                        double x = 0.0;
-                        double y = 0.0;
-                        double z = 0.0;
-                        double radius = 0.0;
-
-                        cout << "How many spheres do you want to add? Enter sphere count" << endl;
-                        cin >> selection;
-
-                        for (int i = 0; i < selection; i++)
-                        {
-                            cout << "Set parameters of sphere " << (i + 1) << endl;
-                            cout << "Enter RGB values one by one as doubles" << endl;
-                            cin >> red;
-                            cin >> green;
-                            cin >> blue;
-
-                            cout << "Enter x,y,z coordinate values one by one as doubles" << endl;
-                            cin >> x;
-                            cin >> y;
-                            cin >> z;
-
-                            cout << "Enter radius as double" << endl;
-                            cin >> radius;
-
-                            raytracer.addSphere(Vector3D(red, green, blue), Vector3D(x, y, z), radius);
-                        }
-                    }
-
-                    cout << "Do you want to add light sources? Enter 1 for YES / Enter 2 for NO" << endl;
-                    cin >> selection;
-
-                    if (selection == 1)
-                    {
-                        double red = 0.0;
-                        double green = 0.0;
-                        double blue = 0.0;
-                        double x = 0.0;
-                        double y = 0.0;
-                        double z = 0.0;
-
-                        cout << "How many light sources do you want to add? Enter light source count" << endl;
-                        cin >> selection;
-
-                        for (int i = 0; i < selection; i++)
-                        {
-                            cout << "Set parameters of light source " << (i + 1) << endl;
-                            cout << "Enter RGB values one by one as doubles" << endl;
-                            cin >> red;
-                            cin >> green;
-                            cin >> blue;
-
-                            cout << "Enter x,y,z coordinate values one by one as doubles" << endl;
-                            cin >> x;
-                            cin >> y;
-                            cin >> z;
-
-                            raytracer.addLightSource(Vector3D(red, green, blue), Vector3D(x, y, z));
-                        }
-                    }
-
-                    cout << "Do you want to add planes? Enter 1 for YES / Enter 2 for NO" << endl;
-                    cin >> selection;
-
-                    if (selection == 1)
-                    {
-                        double red = 0.0;
-                        double green = 0.0;
-                        double blue = 0.0;
-                        double x = 0.0;
-                        double y = 0.0;
-                        double z = 0.0;
-                        double vx = 0.0;
-                        double vy = 0.0;
-                        double vz = 0.0;
-
-                        cout << "How many planes do you want to add? Enter plane count" << endl;
-                        cin >> selection;
-
-                        for (int i = 0; i < selection; i++)
-                        {
-                            cout << "Set parameters of plane " << (i + 1) << endl;
-                            cout << "Enter RGB values one by one as doubles" << endl;
-                            cin >> red;
-                            cin >> green;
-                            cin >> blue;
-
-                            cout << "Enter x,y,z coordinate values of plane point one by one as doubles" << endl;
-                            cin >> x;
-                            cin >> y;
-                            cin >> z;
-
-                            cout << "Enter x,y,z coordinate values of plane normal one by one as doubles" << endl;
-                            cin >> vx;
-                            cin >> vy;
-                            cin >> vz;
-
-                            raytracer.addPlane(Vector3D(red, green, blue), Vector3D(x, y, z), Vector3D(vx, vy, vz));
-                        }
-                    }
-
-                    cout << "Scene is rendering according to your selections. Check image.ppm file to see image" << endl;
-                    raytracer.render();
+                    raytracer.addPlane(Vector3D(red, green, blue), Vector3D(x, y, z), Vector3D(vx, vy, vz));
                 }
+            }
+
+            cout << "Scene is rendering according to your selections. Check image.ppm file to see image" << endl;
+            raytracer.render();
+        }
     }
 
     return 0;

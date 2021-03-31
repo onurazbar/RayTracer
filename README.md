@@ -34,4 +34,4 @@ The program provides two main operations. You can either create the image of pre
 
 There are seven predefined scenes currently and you can create the image of them by selecting between 1-7. The output image file of the scene will be created under the **bin** folder as **image.ppm**.
 
-If you want to create your own scene, you need to follow the steps on command line and provide the required information like light source number/color, object types/sizes/positions. After you define the scene, corresponding output image is created under **bin** just like in predefined scenes.
+If you want to create your own scene, you need to follow the steps on command line and provide the required information like light source number/color and object types/sizes/positions. After you define the scene, corresponding output image is created under **bin** just like in predefined scenes.

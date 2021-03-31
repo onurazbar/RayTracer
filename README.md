@@ -36,6 +36,8 @@ There are seven predefined scenes currently and you can create the image of them
 
 If you want to create your own scene, you need to follow the steps on command line and provide the required information like light source number/color and object type/size/position. After you define the scene, corresponding output image is created under **bin** just like in predefined scenes.
 
+## Sample Scenes
+
 
 ![Sample Scene 4](https://github.com/onurazbar/RayTracer/blob/main/SampleScenes/Scene_4.png)
 

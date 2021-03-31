@@ -25,3 +25,13 @@ If you want to make a clean build by removing output folders and files, type bel
 This will remove **bin** and **obj** folders and all their contents. Then type **make** commmand again.
 
 ## Application Instructions
+
+When you build the project, executable application file **raytracer** will be created under **bin** folder. To run the program go to **bin** folder run the executable file like below;
+
+**./raytracer**
+
+The program provides two main operations. You can either create the image of predefined scenes or you can create a scene and get the output image.
+
+There are seven predefined scenes currently and you can create the image of them by selecting between 1-7. theoutput image file of the scene will be created under the **bin** folder as **image.ppm**.
+
+If you want to create your own scene, you need to follow the steps on command line and provide the required information like light source number/color object types/sizes/positions. After you define the scene corresponding output image is created under **bin** just like in predefined scenes.

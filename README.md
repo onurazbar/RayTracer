@@ -36,6 +36,12 @@ There are seven predefined scenes currently and you can create the image of them
 
 If you want to create your own scene, you need to follow the steps on command line and provide the required information like light source number/color and object type/size/position. After you define the scene, corresponding output image is created under **bin** just like in predefined scenes.
 
+## Notes
+
+During setting camera positions and changing view, I faced some problems. Expecially in changing camera space to world space via matrix products. Therefore I could not add the parts about camera positions settings yet and keep camera at its original position (0.0, 0.0, 0.0). I will check this later.
+
+Also during intersection of rays and triangles I obtained some improper outputs. Therefore I did not added triangles to sample scenes and not defined a mechanism for setting triangle settings in Main.cpp. Therefore Triangle class is currently in the project but it is not used. I will check this issue and add triangles to sample scenes after I will fix it.
+
 ## Sample Scenes
 
 

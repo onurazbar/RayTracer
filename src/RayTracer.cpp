@@ -159,8 +159,8 @@ void RayTracer::render()
             pixel_color = traceRay(ray);
 
             out << (int)pixel_color.x << ' '
-                  << (int)pixel_color.y << ' '
-                  << (int)pixel_color.z << '\n';
+                << (int)pixel_color.y << ' '
+                << (int)pixel_color.z << '\n';
         }
     }
 }
